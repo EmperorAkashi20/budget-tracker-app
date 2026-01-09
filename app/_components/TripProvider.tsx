@@ -37,16 +37,22 @@ export function TripProvider({ children }: { children: React.ReactNode }) {
 		async function init() {
 			// Try backend first
 			try {
+				console.log("Initializing: Checking backend connection...");
 				await api.health();
+				console.log("Backend is reachable, fetching trips...");
 				const list = await api.listTrips();
+				console.log(`Found ${list.trips.length} trips in backend`);
 				if (!cancelled && list.trips.length > 0) {
 					// load first trip fully
 					const firstId = list.trips[0].id;
+					console.log(`Loading trip ${firstId} from backend...`);
 					const full = (await api.getTrip(firstId)) as Trip;
-					setState({ trips: [full], activeTripId: full.id });
+					console.log("Loaded trip from backend:", full.id, full.name, "exchangeRate:", full.exchangeRateVndPerUsd);
+					if (!cancelled) setState({ trips: [full], activeTripId: full.id });
 					return;
 				}
 				// if backend empty, seed and push to backend
+				console.log("Backend is empty, seeding...");
 				const seed: Trip = {
 					...(seedTrip as unknown as Trip),
 					id: (seedTrip as unknown as Trip).id || generateId("trip"),
@@ -57,10 +63,12 @@ export function TripProvider({ children }: { children: React.ReactNode }) {
 				await api.saveTrip(seed);
 				if (!cancelled) setState({ trips: [seed], activeTripId: seed.id });
 				return;
-			} catch {
+			} catch (err) {
+				console.warn("Backend not reachable, falling back to localStorage:", err);
 				// Backend not reachable → localStorage fallback
 				const loaded = loadAppState();
 				if (loaded && loaded.trips?.length) {
+					console.log("Loaded from localStorage:", loaded.trips.length, "trips");
 					if (!cancelled) setState(loaded);
 					return;
 				}
@@ -71,6 +79,7 @@ export function TripProvider({ children }: { children: React.ReactNode }) {
 					createdAt: new Date().toISOString(),
 					updatedAt: new Date().toISOString()
 				};
+				console.log("Using seed data (no backend, no localStorage)");
 				if (!cancelled) setState({ trips: [seed], activeTripId: seed.id });
 			}
 		}
@@ -112,12 +121,19 @@ export function TripProvider({ children }: { children: React.ReactNode }) {
 		trip.updatedAt = new Date().toISOString();
 		setState((s) => upsertTrip(s, trip));
 		// fire-and-forget backend sync
-		void api.saveTrip(trip).catch(() => {});
+		console.log("Saving trip to backend:", trip.id, trip.name);
+		void api.saveTrip(trip).then(() => {
+			console.log("Successfully saved trip to backend:", trip.id);
+		}).catch((err) => {
+			console.error("Failed to save trip to backend:", err);
+		});
 	}
 
 	function removeTrip(tripId: string) {
 		setState((s) => deleteTrip(s, tripId));
-		void api.deleteTrip(tripId).catch(() => {});
+		void api.deleteTrip(tripId).catch((err) => {
+			console.error("Failed to delete trip from backend:", err);
+		});
 	}
 
 	function mutateActiveTrip(mutator: (trip: Trip) => Trip) {
@@ -126,7 +142,12 @@ export function TripProvider({ children }: { children: React.ReactNode }) {
 			if (!t) return s;
 			const next = mutator({ ...t, days: t.days.map((d) => ({ ...d })) });
 			// sync to backend
-			void api.saveTrip(next).catch(() => {});
+			console.log("Saving trip to backend (mutateActiveTrip):", next.id, next.name);
+			void api.saveTrip(next).then(() => {
+				console.log("Successfully saved trip to backend:", next.id);
+			}).catch((err) => {
+				console.error("Failed to save trip to backend:", err);
+			});
 			return upsertTrip(s, next);
 		});
 	}
