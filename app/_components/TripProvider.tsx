@@ -46,10 +46,16 @@ export function TripProvider({ children }: { children: React.ReactNode }) {
 					// load first trip fully
 					const firstId = list.trips[0].id;
 					console.log(`Loading trip ${firstId} from backend...`);
-					const full = (await api.getTrip(firstId)) as Trip;
-					console.log("Loaded trip from backend:", full.id, full.name, "exchangeRate:", full.exchangeRateVndPerUsd);
-					if (!cancelled) setState({ trips: [full], activeTripId: full.id });
-					return;
+					try {
+						const full = (await api.getTrip(firstId)) as Trip;
+						console.log("Loaded trip from backend:", full.id, full.name, "exchangeRate:", full.exchangeRateVndPerUsd);
+						if (!cancelled) setState({ trips: [full], activeTripId: full.id });
+						return;
+					} catch (tripError) {
+						console.error(`Failed to load trip ${firstId} from backend:`, tripError);
+						// Fall through to localStorage/seed
+						throw tripError;
+					}
 				}
 				// if backend empty, seed and push to backend
 				console.log("Backend is empty, seeding...");
