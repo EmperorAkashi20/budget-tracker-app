@@ -1,0 +1,197 @@
+{
+  "id": "trip_vietnam_jan_2026",
+  "name": "Vietnam Jan 2026",
+  "startDate": "2026-01-16",
+  "endDate": "2026-01-26",
+  "baseCurrency": "VND",
+  "secondaryCurrency": "USD",
+  "exchangeRateVndPerUsd": 27000,
+  "totalVndAvailable": 16800000,
+  "totalUsdAvailable": 350,
+  "version": 1,
+  "createdAt": "2026-01-07T00:00:00.000Z",
+  "updatedAt": "2026-01-07T00:00:00.000Z",
+  "days": [
+    {
+      "dayNumber": 1,
+      "dateLabel": "Jan 16 (Thursday)",
+      "location": "Hanoi",
+      "title": "Hanoi Arrival",
+      "categories": [
+        { "name": "Food", "budgetVnd": 200000, "actualVnd": 0 },
+        { "name": "Coffee/Cafe", "budgetVnd": 50000, "actualVnd": 0 },
+        { "name": "Transport", "budgetVnd": 150000, "actualVnd": 0 },
+        { "name": "Misc/Tips", "budgetVnd": 50000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Arrive HAN 18:25; free at leisure; light spend day."
+    },
+    {
+      "dayNumber": 2,
+      "dateLabel": "Jan 17 (Friday)",
+      "location": "Hanoi",
+      "title": "Ninh Binh Tour",
+      "categories": [
+        { "name": "Breakfast", "budgetVnd": 50000, "actualVnd": 0 },
+        { "name": "Lunch (own)", "budgetVnd": 200000, "actualVnd": 0 },
+        { "name": "Dinner (own)", "budgetVnd": 250000, "actualVnd": 0 },
+        { "name": "Coffee", "budgetVnd": 50000, "actualVnd": 0 },
+        { "name": "Transport", "budgetVnd": 50000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Tips (Guide)", "budgetVnd": 260000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Full day Ninh Binh tour; tip 260k."
+    },
+    {
+      "dayNumber": 3,
+      "dateLabel": "Jan 18 (Saturday)",
+      "location": "Halong",
+      "title": "Halong Bay Cruise (Embark)",
+      "categories": [
+        { "name": "Breakfast (before)", "budgetVnd": 50000, "actualVnd": 0 },
+        { "name": "Drinks/extras", "budgetVnd": 200000, "actualVnd": 0 },
+        { "name": "Tips (cruise crew)", "budgetVnd": 150000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 50000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "All meals on cruise included."
+    },
+    {
+      "dayNumber": 4,
+      "dateLabel": "Jan 19 (Sunday)",
+      "location": "Halong → Danang",
+      "title": "Disembark → Fly to Danang",
+      "categories": [
+        { "name": "Light breakfast", "budgetVnd": 50000, "actualVnd": 0 },
+        { "name": "Drinks/extras", "budgetVnd": 150000, "actualVnd": 0 },
+        { "name": "Tips (crew/guide)", "budgetVnd": 150000, "actualVnd": 0 },
+        { "name": "Transport (to airport)", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 50000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Transfer on old route; flight VN 187."
+    },
+    {
+      "dayNumber": 5,
+      "dateLabel": "Jan 20 (Monday)",
+      "location": "Danang",
+      "title": "Ba Na Hills",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Lunch", "budgetVnd": 250000, "actualVnd": 0 },
+        { "name": "Dinner", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Coffee/snacks", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Transport/activities", "budgetVnd": 200000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Tips (Guide)", "budgetVnd": 260000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Guide Dinh Ky Bao; skip overpriced add-ons."
+    },
+    {
+      "dayNumber": 6,
+      "dateLabel": "Jan 21 (Tuesday)",
+      "location": "Danang / Hoi An",
+      "title": "Hoi An",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Lunch", "budgetVnd": 250000, "actualVnd": 0 },
+        { "name": "Dinner", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Coffee/snacks", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Market/shopping", "budgetVnd": 200000, "actualVnd": 0 },
+        { "name": "Transport", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Tips (Guide)", "budgetVnd": 260000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Evening Hoi An night market; set 200k shopping max."
+    },
+    {
+      "dayNumber": 7,
+      "dateLabel": "Jan 22 (Wednesday)",
+      "location": "Danang → Phu Quoc",
+      "title": "Scuba Day",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Lunch (included)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Dinner", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Coffee/snacks", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Transport", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "SCUBA DIVING (2 people)", "budgetVnd": 4200000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 50000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Scuba 4.2M VND total; lunch included."
+    },
+    {
+      "dayNumber": 8,
+      "dateLabel": "Jan 23 (Thursday)",
+      "location": "Phu Quoc",
+      "title": "Vinpearl Safari & VinWonders",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Lunch", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Dinner", "budgetVnd": 400000, "actualVnd": 0 },
+        { "name": "Coffee/snacks", "budgetVnd": 150000, "actualVnd": 0 },
+        { "name": "Activities (VinWonders)", "budgetVnd": 400000, "actualVnd": 0 },
+        { "name": "Shopping", "budgetVnd": 250000, "actualVnd": 0 },
+        { "name": "Transport", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 100000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Premium island pricing; one quality dinner."
+    },
+    {
+      "dayNumber": 9,
+      "dateLabel": "Jan 24 (Friday)",
+      "location": "Phu Quoc",
+      "title": "Island Hopping + Kiss of the Sea",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Lunch (included)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Coffee/snacks", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Dinner (before show)", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Transport", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "KISS OF THE SEA (2 tickets)", "budgetVnd": 1200000, "actualVnd": 0 },
+        { "name": "Post-show drinks/snacks", "budgetVnd": 100000, "actualVnd": 0 },
+        { "name": "Misc", "budgetVnd": 50000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Klook booking 1.2M VND for 2."
+    },
+    {
+      "dayNumber": 10,
+      "dateLabel": "Jan 25 (Saturday)",
+      "location": "Phu Quoc",
+      "title": "Free at Leisure",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Lunch", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Dinner", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Coffee/snacks", "budgetVnd": 150000, "actualVnd": 0 },
+        { "name": "Shopping (final)", "budgetVnd": 300000, "actualVnd": 0 },
+        { "name": "Activities/misc", "budgetVnd": 200000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Enjoy and spend remaining ~1.25M comfortably."
+    },
+    {
+      "dayNumber": 11,
+      "dateLabel": "Jan 26 (Sunday)",
+      "location": "Departure",
+      "title": "Departure",
+      "categories": [
+        { "name": "Breakfast (hotel)", "budgetVnd": 0, "actualVnd": 0 },
+        { "name": "Misc/tips", "budgetVnd": 50000, "actualVnd": 0 }
+      ],
+      "transactions": [],
+      "notes": "Minimal spending; avoid airport meals."
+    }
+  ]
+}
+
+
+
+
+
