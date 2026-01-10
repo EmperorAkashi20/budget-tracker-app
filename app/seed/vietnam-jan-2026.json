@@ -5,7 +5,7 @@
   "endDate": "2026-01-26",
   "baseCurrency": "VND",
   "secondaryCurrency": "USD",
-  "exchangeRateVndPerUsd": 27000,
+  "exchangeRateVndPerUsd": 26000,
   "totalVndAvailable": 16800000,
   "totalUsdAvailable": 350,
   "version": 1,
@@ -24,7 +24,7 @@
         { "name": "Misc/Tips", "budgetVnd": 50000, "actualVnd": 0 }
       ],
       "transactions": [],
-      "notes": "Arrive HAN 18:25; free at leisure; light spend day."
+      "notes": "Arrive HAN at 18:25. Free at leisure. Check-in hotel. Rest. Early arrival; light spending day. Breakfast/lunch skip or simple hotel meal. Settle in; minimal activity."
     },
     {
       "dayNumber": 2,
@@ -41,7 +41,7 @@
         { "name": "Tips (Guide)", "budgetVnd": 260000, "actualVnd": 0 }
       ],
       "transactions": [],
-      "notes": "Full day Ninh Binh tour; tip 260k."
+      "notes": "Ninh Binh (Hoa Lu, Tam Coc) - 90km south of Hanoi. Full day tour with guide. Meal Recommendations: Breakfast: Street vendor (Pho) = 40k, Lunch: Local restaurant in Ninh Binh = 150k, Dinner: Restaurant in Hanoi = 200-250k, Coffee: Afternoon cafe = 50k. Tips: $5 per person = 260k VND (Give to guide at day end). Budget allows for one quality dinner. Breakfast/lunch relatively cheap with street food. Miscellaneous for market stops."
     },
     {
       "dayNumber": 3,
@@ -55,7 +55,7 @@
         { "name": "Misc", "budgetVnd": 50000, "actualVnd": 0 }
       ],
       "transactions": [],
-      "notes": "All meals on cruise included."
+      "notes": "11:00 AM: Check-in Ambassador Halong Cruise. 12:00 PM: Transfer to cruise. 12:45 PM: Lunch buffet (INCLUDED). 14:30: Luon Cave kayaking (INCLUDED). 16:00: Titov Island (INCLUDED). 17:30: Cooking class (INCLUDED). 19:00: Michelin dinner (INCLUDED). 21:00: Live music band. ALL MEALS INCLUDED ✅. Lowest spend day (meals included). Only add-ons are drinks, tips, miscellaneous. Keep all receipts for tips reference."
     },
     {
       "dayNumber": 4,
@@ -190,8 +190,3 @@
     }
   ]
 }
-
-
-
-
-

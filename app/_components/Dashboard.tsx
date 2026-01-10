@@ -99,7 +99,7 @@ function MobileHeader({
     <div className="sticky top-0 z-10 border-b bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-3">
         <select
-          className="h-10 flex-1 rounded-xl border bg-white px-3 text-sm"
+          className="h-10 flex-1 rounded-xl border bg-white px-3 text-sm text-zinc-900"
           value={trip.id}
           onChange={(e) => setActiveTripId(e.target.value)}
         >
@@ -110,7 +110,7 @@ function MobileHeader({
           ))}
         </select>
         <button
-          className="h-10 rounded-xl border bg-white px-3 text-sm"
+          className="h-10 rounded-xl border bg-white px-3 text-sm text-zinc-900"
           onClick={onOpenSettings}
         >
           Settings
@@ -137,20 +137,20 @@ function SummaryCards({ trip }: { trip: Trip }) {
     <div className="rounded-2xl border bg-white p-4 shadow-sm">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <div className="text-xs text-zinc-500">Total spent</div>
-          <div className="mt-1 text-xl font-semibold">
+          <div className="text-xs text-zinc-700">Total spent</div>
+          <div className="mt-1 text-xl font-semibold text-zinc-900">
             {formatBase(totalActualVnd, trip)}
           </div>
-          <div className="mt-1 text-xs text-zinc-500">
+          <div className="mt-1 text-xs text-zinc-700">
             Budget: {formatBase(totalCashBase, trip)}
           </div>
         </div>
         <div className="text-right">
-          <div className="text-xs text-zinc-500">Remaining</div>
-          <div className="mt-1 text-lg font-semibold">
+          <div className="text-xs text-zinc-700">Remaining</div>
+          <div className="mt-1 text-lg font-semibold text-zinc-900">
             {formatBase(remainingVnd, trip)}
           </div>
-          <div className="mt-1 text-xs text-zinc-500">
+          <div className="mt-1 text-xs text-zinc-700">
             {usedPct.toFixed(1)}% used
           </div>
         </div>
@@ -160,14 +160,14 @@ function SummaryCards({ trip }: { trip: Trip }) {
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div className="rounded-xl bg-zinc-50 p-3">
-          <div className="text-xs text-zinc-500">Planned total</div>
-          <div className="mt-0.5 font-medium">
+          <div className="text-xs text-zinc-700">Planned total</div>
+          <div className="mt-0.5 font-medium text-zinc-900">
             {formatBase(totalPlannedVnd, trip)}
           </div>
         </div>
         <div className="rounded-xl bg-zinc-50 p-3">
-          <div className="text-xs text-zinc-500">Emergency buffer</div>
-          <div className="mt-0.5 font-medium">
+          <div className="text-xs text-zinc-700">Emergency buffer</div>
+          <div className="mt-0.5 font-medium text-zinc-900">
             {formatBase(emergencyBufferVnd, trip)}
           </div>
         </div>
@@ -205,7 +205,7 @@ function SettingsSheet({
       />
       <div className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-t-3xl border bg-white p-4 shadow-xl">
         <div className="sticky top-0 z-10 flex items-center justify-between bg-white pb-2">
-          <div className="text-sm font-semibold">Settings</div>
+          <div className="text-sm font-semibold text-zinc-900">Settings</div>
           <button
             className="h-8 w-8 rounded-full border text-sm"
             onClick={onClose}
@@ -216,17 +216,17 @@ function SettingsSheet({
         </div>
         <div className="mt-2 space-y-4 pb-4">
           <div className="rounded-2xl border p-3">
-            <div className="text-xs font-medium text-zinc-500">Trip basics</div>
+            <div className="text-xs font-medium text-zinc-800">Trip basics</div>
             <div className="mt-2 grid grid-cols-1 gap-2">
               <input
-                className="h-11 rounded-xl border px-3 text-sm"
+                className="h-11 rounded-xl border px-3 text-sm text-zinc-900"
                 value={trip.name}
                 onChange={(e) => updateTrip({ ...trip, name: e.target.value })}
               />
               <div className="grid grid-cols-2 gap-2">
                 <input
                   type="date"
-                  className="h-11 rounded-xl border px-3 text-sm"
+                  className="h-11 rounded-xl border px-3 text-sm text-zinc-900"
                   value={trip.startDate}
                   onChange={(e) =>
                     updateTrip({ ...trip, startDate: e.target.value })
@@ -234,7 +234,7 @@ function SettingsSheet({
                 />
                 <input
                   type="date"
-                  className="h-11 rounded-xl border px-3 text-sm"
+                  className="h-11 rounded-xl border px-3 text-sm text-zinc-900"
                   value={trip.endDate}
                   onChange={(e) =>
                     updateTrip({ ...trip, endDate: e.target.value })
@@ -245,8 +245,8 @@ function SettingsSheet({
           </div>
 
           <div className="rounded-2xl border p-3">
-            <div className="text-xs font-medium text-zinc-500">Trip days</div>
-            <div className="mt-2 text-xs text-zinc-500">
+            <div className="text-xs font-medium text-zinc-800">Trip days</div>
+            <div className="mt-2 text-xs text-zinc-700">
               Current days: {trip.days.length}. You can append or remove days at
               the end of the trip.
             </div>
@@ -309,15 +309,15 @@ function SettingsSheet({
           </div>
 
           <div className="rounded-2xl border p-3">
-            <div className="text-xs font-medium text-zinc-500">
+            <div className="text-xs font-medium text-zinc-800">
               Cash & exchange rate
             </div>
             <div className="mt-2 grid grid-cols-2 gap-2">
               <div>
-                <label className="text-xs text-zinc-500">VND</label>
+                <label className="text-xs text-zinc-700">VND</label>
                 <input
                   type="number"
-                  className="mt-1 h-11 w-full rounded-xl border px-3 text-sm"
+                  className="mt-1 h-11 w-full rounded-xl border px-3 text-sm text-zinc-900"
                   value={trip.totalVndAvailable}
                   onChange={(e) =>
                     updateTrip({
@@ -328,10 +328,10 @@ function SettingsSheet({
                 />
               </div>
               <div>
-                <label className="text-xs text-zinc-500">USD</label>
+                <label className="text-xs text-zinc-700">USD</label>
                 <input
                   type="number"
-                  className="mt-1 h-11 w-full rounded-xl border px-3 text-sm"
+                  className="mt-1 h-11 w-full rounded-xl border px-3 text-sm text-zinc-900"
                   value={trip.totalUsdAvailable}
                   onChange={(e) =>
                     updateTrip({
@@ -342,10 +342,10 @@ function SettingsSheet({
                 />
               </div>
               <div className="col-span-2">
-                <label className="text-xs text-zinc-500">1 USD = VND</label>
+                <label className="text-xs text-zinc-700">1 USD = VND</label>
                 <input
                   type="number"
-                  className="mt-1 h-11 w-full rounded-xl border px-3 text-sm"
+                  className="mt-1 h-11 w-full rounded-xl border px-3 text-sm text-zinc-900"
                   value={trip.exchangeRateVndPerUsd}
                   onChange={(e) =>
                     updateTrip({
@@ -359,7 +359,7 @@ function SettingsSheet({
           </div>
 
           <div className="rounded-2xl border p-3">
-            <div className="text-xs font-medium text-zinc-500">
+            <div className="text-xs font-medium text-zinc-800">
               Backup / reuse
             </div>
             <div className="mt-2 flex flex-wrap gap-2">
@@ -445,7 +445,7 @@ function SettingsSheet({
             </div>
           </div>
 
-          <div className="text-xs text-zinc-500">
+          <div className="text-xs text-zinc-700">
             Tip: keep using the Add expense card. It is optimized for quick
             one-handed entry.
           </div>
@@ -509,7 +509,7 @@ function QuickAddExpense({
 
   return (
     <div id="quick-add" className="rounded-2xl border bg-white p-4 shadow-sm">
-      <div className="text-sm font-semibold">Add expense</div>
+      <div className="text-sm font-semibold text-zinc-900">Add expense</div>
       <form
         className="mt-3 grid grid-cols-1 gap-2"
         onSubmit={(e) => {
@@ -531,7 +531,7 @@ function QuickAddExpense({
       >
         <div className="grid grid-cols-2 gap-2">
           <select
-            className="h-11 rounded-xl border bg-white px-3 text-sm"
+            className="h-11 rounded-xl border bg-white px-3 text-sm text-zinc-900"
             value={dayNumber}
             onChange={(e) => setDayNumber(Number(e.target.value))}
           >
@@ -542,7 +542,7 @@ function QuickAddExpense({
             ))}
           </select>
           <select
-            className="h-11 rounded-xl border bg-white px-3 text-sm"
+            className="h-11 rounded-xl border bg-white px-3 text-sm text-zinc-900"
             value={categoryName}
             onChange={(e) => setCategoryName(e.target.value)}
           >
@@ -557,13 +557,13 @@ function QuickAddExpense({
           <input
             type="number"
             inputMode="numeric"
-            className="h-11 rounded-xl border px-3 text-sm"
+            className="h-11 rounded-xl border px-3 text-sm text-zinc-900"
             placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
           <select
-            className="h-11 rounded-xl border bg-white px-3 text-sm"
+            className="h-11 rounded-xl border bg-white px-3 text-sm text-zinc-900"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
           >
@@ -575,7 +575,7 @@ function QuickAddExpense({
           </select>
           <input
             type="text"
-            className="h-11 rounded-xl border px-3 text-sm"
+            className="h-11 rounded-xl border px-3 text-sm text-zinc-900"
             placeholder="Note (optional)"
             value={note}
             onChange={(e) => setNote(e.target.value)}
@@ -624,16 +624,16 @@ function DayAccordion({
       <summary className="cursor-pointer list-none px-4 py-3">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <div className="text-sm font-semibold">
+            <div className="text-sm font-semibold text-zinc-900">
               Day {day.dayNumber} • {day.dateLabel}
             </div>
-            <div className="mt-0.5 text-xs text-zinc-500">
+            <div className="mt-0.5 text-xs text-zinc-700">
               {day.location} {day.title ? `— ${day.title}` : ""}
             </div>
           </div>
           <div className="text-right">
-            <div className="text-xs text-zinc-500">Actual / Planned</div>
-            <div className="text-sm font-medium">
+            <div className="text-xs text-zinc-700">Actual / Planned</div>
+            <div className="text-sm font-medium text-zinc-900">
               {formatBase(totals.actual, activeTrip!)} /{" "}
               {formatBase(totals.planned, activeTrip!)}
             </div>
@@ -645,7 +645,7 @@ function DayAccordion({
       </summary>
       <div className="border-t px-4 py-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="text-sm font-semibold">Categories</div>
+          <div className="text-sm font-semibold text-zinc-900">Categories</div>
           <button
             className="h-10 rounded-xl border bg-white px-3 text-sm"
             onClick={() => {
@@ -674,7 +674,7 @@ function DayAccordion({
             form.budget.value = "";
           }}
         >
-          <div className="text-xs font-medium text-zinc-500">
+          <div className="text-xs font-medium text-zinc-800">
             Add a category (for small activities, souvenirs, etc.)
           </div>
           <div className="grid grid-cols-2 gap-2">
@@ -698,7 +698,7 @@ function DayAccordion({
           >
             Add category
           </button>
-          <div className="text-xs text-zinc-500">
+          <div className="text-xs text-zinc-700">
             You can remove a category only if it has{" "}
             <strong>no transactions</strong> and <strong>0 actual</strong>.
           </div>
@@ -710,14 +710,14 @@ function DayAccordion({
               className="flex items-start gap-3 rounded-xl bg-zinc-50 p-3"
             >
               <div className="min-w-0 flex-1">
-                <div className="truncate text-sm font-medium">{c.name}</div>
-                <div className="mt-0.5 text-xs text-zinc-500">
+                <div className="truncate text-sm font-medium text-zinc-900">{c.name}</div>
+                <div className="mt-0.5 text-xs text-zinc-700">
                   Actual: {formatBase(c.actualVnd, activeTrip!)}
                 </div>
               </div>
               <div className="flex flex-col items-end gap-2 sm:flex-row sm:items-center">
                 <div className="text-right">
-                  <div className="text-xs text-zinc-500">Budget</div>
+                  <div className="text-xs text-zinc-700">Budget</div>
                   {editBudgets ? (
                     <input
                       type="number"
@@ -735,7 +735,7 @@ function DayAccordion({
                       }
                     />
                   ) : (
-                    <div className="mt-1 text-sm font-medium">
+                    <div className="mt-1 text-sm font-medium text-zinc-900">
                       {formatBase(c.budgetVnd, activeTrip!)}
                     </div>
                   )}
@@ -762,7 +762,7 @@ function DayAccordion({
         </div>
 
         <div className="mt-5">
-          <div className="text-sm font-semibold">Transactions</div>
+          <div className="text-sm font-semibold text-zinc-900">Transactions</div>
           {day.transactions?.length ? (
             <ul className="mt-2 space-y-2">
               {day.transactions.map((tx) => (
@@ -771,7 +771,7 @@ function DayAccordion({
                   className="flex items-start justify-between gap-2 rounded-xl border p-3"
                 >
                   <div className="min-w-0">
-                    <div className="text-sm font-medium">
+                    <div className="text-sm font-medium text-zinc-900">
                       {tx.categoryName} •{" "}
                       {formatBase(
                         (tx as any).amountBase ?? (tx as any).amountVnd ?? 0,
@@ -781,7 +781,7 @@ function DayAccordion({
                       {tx.originalAmount ?? (tx as any).amountVnd ?? 0})
                     </div>
                     {tx.note ? (
-                      <div className="mt-0.5 truncate text-xs text-zinc-500">
+                      <div className="mt-0.5 truncate text-xs text-zinc-700">
                         {tx.note}
                       </div>
                     ) : null}
@@ -796,14 +796,14 @@ function DayAccordion({
               ))}
             </ul>
           ) : (
-            <div className="mt-2 text-sm text-zinc-500">
+            <div className="mt-2 text-sm text-zinc-700">
               No transactions yet.
             </div>
           )}
         </div>
 
         <div className="mt-5">
-          <div className="text-sm font-semibold">Notes</div>
+          <div className="text-sm font-semibold text-zinc-900">Notes</div>
           <textarea
             className="mt-2 w-full rounded-xl border p-3 text-sm"
             placeholder="Notes..."
@@ -827,7 +827,7 @@ export function Dashboard() {
   if (!activeTrip) {
     return (
       <div className="mx-auto max-w-5xl px-4 py-8">
-        <div className="text-center text-sm text-zinc-500">Loading...</div>
+        <div className="text-center text-sm text-zinc-800">Loading...</div>
       </div>
     );
   }
@@ -851,8 +851,8 @@ export function Dashboard() {
         <div className="rounded-2xl border bg-white p-4 shadow-sm">
           <div className="flex items-center justify-between gap-2">
             <div>
-              <div className="text-sm font-semibold">Plan</div>
-              <div className="mt-0.5 text-xs text-zinc-500">
+              <div className="text-sm font-semibold text-zinc-900">Plan</div>
+              <div className="mt-0.5 text-xs text-zinc-700">
                 Tap a day to see details.
               </div>
             </div>
